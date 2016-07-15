@@ -1,0 +1,26 @@
+{
+  "name": "skeleton",
+  "main": [
+    "/dist/my-angular.min.js",
+    "/dist/my-angular.min.css"
+  ],
+  "version": "0.1.0",
+  "description": "angular-mdl-skeleton",
+  "authors": [
+    "Eduardo Pedroso"
+  ],
+  "ignore": [
+    "**/.*",
+    "package.json",
+    "gulpfile.js",
+    "node_modules",
+    "bower_components",
+    "app"
+  ],
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-route": "~1.3.18",
+    "ng-table": "~0.8.3",
+    "moment": "2.12.0"
+  }
+}
