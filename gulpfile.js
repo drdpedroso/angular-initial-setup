@@ -11,9 +11,8 @@ var gulp        = require('gulp'),
     queue       = require('streamqueue'),
     rimraf      = require('rimraf'),
     noop        = g.util.noop,
-    minifyCSS   = require('gulp-minify-css'),
+    // minifyCSS   = require('gulp-minify-css'),
     mobileFirst = require('gulp-mobile-first'),
-    s3          = require("gulp-s3"),
     isWatching  = false;
 
   var htmlminOpts = {
@@ -23,19 +22,6 @@ var gulp        = require('gulp'),
     collapseBooleanAttributes: true,
     removeRedundantAttributes: true
   };
-
-  /*
-  Publish /dist folder in AWS S3 Bucket
-  */
-  //var aws = JSON.parse(fs.readFileSync('./aws.json'));
-  //var options = {
-  //  headers: {'Cache-Control': 'max-age=315360000, no-transform, public'}
-  //}
-  //
-  //gulp.task('upload', function() {
-  //  return gulp.src('./dist/**', {read: false})
-  //    .pipe(s3(aws, options));
-  //});
 
   /**
    * JS Hint
@@ -75,13 +61,6 @@ var gulp        = require('gulp'),
     return cssFiles().pipe(dist('css', bower.name));
   });
 
-  gulp.task('csslint', ['styles'], function () {
-    // return cssFiles()
-    //   .pipe(g.cached('csslint'))
-    //   .pipe(g.csslint('./.csslintrc'))
-    //   .pipe(g.csslint.reporter());
-  });
-
   /**
    * Scripts
    */
@@ -95,10 +74,6 @@ var gulp        = require('gulp'),
   gulp.task('templates', function () {
     return templateFiles().pipe(buildTemplates());
   });
-
-  //gulp.task('templates-dist', function () {
-  //  return templateFiles({min: true}).pipe(buildTemplates());
-  //});
 
   /**
    * Vendors
@@ -148,7 +123,7 @@ var gulp        = require('gulp'),
       var kind = value.split('/');
       return gulp.src(value)
         .pipe(gulp.dest('./dist/' + kind[2]));
-    })
+    });
 
   });
 
@@ -178,7 +153,7 @@ var gulp        = require('gulp'),
     });
     gulp.watch('./app/index.html', ['index']);
     gulp.watch(['./app/**/*.html', '!./app/index.html'], ['templates']);
-    gulp.watch(['./app/css/less/*.less'], ['csslint']).on('change', function (evt) {
+    gulp.watch(['./app/css/less/*.less']).on('change', function (evt) {
       if (evt.type !== 'changed') {
         gulp.start('index');
       } else {
@@ -195,7 +170,7 @@ var gulp        = require('gulp'),
   /**
    * Lint everything
    */
-  gulp.task('lint', ['jshint', 'csslint']);
+  gulp.task('lint', ['jshint']);
 
   /**
    * Test
