@@ -3,16 +3,14 @@
 
   var app = angular.module('angular-mdl-skeleton', ['ui.router']);
 
-  app.config(function($stateProvider) {
+  app.config(function($stateProvider, $urlRouterProvider) {
+    
+    $urlRouterProvider.otherwise('/home');
 
     $stateProvider
-      .state('example',{
-        url: '/',
-        views: {
-          'content': {
-            templateUrl: './modules/example/views/example.html'
-          }
-        }
+      .state('home', {
+          url: '/home',
+          templateUrl: '../modules/example/views/example.html'
       });
 
   });
