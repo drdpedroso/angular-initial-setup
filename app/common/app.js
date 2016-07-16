@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('angular-mdl-skeleton', []);
+var app = angular.module('angular-mdl-skeleton', ['ui.router']);
 
 // app.config(function($stateProvider) {
 //
