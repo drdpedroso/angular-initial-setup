@@ -1,5 +1,5 @@
 {
-  "browser": true,
+  "browser": false,
   "bitwise": true,
   "camelcase": true,
   "curly": true,
@@ -15,5 +15,7 @@
   "smarttabs": true,
   "globals": {
     "angular": false
-  }
+  },
+  "esversion": 6,
+  "devel" : true
 }
