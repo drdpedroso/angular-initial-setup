@@ -38,38 +38,39 @@
 	      <a href="#fixed-tab-3" class="mdl-layout__tab">Operações</a>
 	    </div>
 	  </header>
-	  <div class="mdl-layout__drawer">
-	    <span class="mdl-layout-title">Sidebar, Bro</span>
-	    <form action="#">
-		    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-			    <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
-			  	  <i class="material-icons">search</i>
-			    </label>
-			    <div class="mdl-textfield__expandable-holder">
-				    <input class="mdl-textfield__input" type="text" id="sample6">
-				    <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
-			    </div>
-		    </div>
-	    </form>
-              <div class=" mdl-navigation__link material-icons mdl-badge mdl-badge--overlap" data-badge="1">account_box </div>
-              <a class="mdl-navigation__link" href="">Link</a>
-              <a class="mdl-navigation__link" href="">Link</a>
-              <a class="mdl-navigation__link" href="">Link</a>
-	  </div>
-		<main class="mdl-layout__content">
-			<ui-view ng-cloak></ui-view>
-		</main>
+        <div class="mdl-layout__drawer">
+          <span class="mdl-layout-title">Title</span>
+          <form action="#">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+              <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
+                  <i class="material-icons">search</i>
+              </label>
+              <div class="mdl-textfield__expandable-holder">
+                  <input class="mdl-textfield__input" type="text" id="sample6">
+                  <label class="mdl-textfield__label" >Expandable Input</label>
+              </div>
+              </div>
+          </form>
+          <nav class="mdl-navigation">
+              <a class="mdl-navigation__link" href=""><span class="mdl-badge" data-badge="4">Inbox</span></a>
+              <a class="mdl-navigation__link" href="">Perfil</a>
+              <a class="mdl-navigation__link" href="">Sair</a>
+          </nav>
+      </div>
+      <main class="mdl-layout__content">
+          <ui-view ng-cloak></ui-view>
+      </main>
 
-		<!-- Footer -->
-		<footer class="mdl-mini-footer">
-			<div class="mdl-mini-footer__left-section">
-				<div class="mdl-logo">Some Footer</div>
-				<ul class="mdl-mini-footer__link-list">
-					<li><a href="#">Ajuda</a></li>
-					<li><a href="#">Termos de Privacidade</a></li>
-				</ul>
-			</div>
-		</footer>
+      <!-- Footer -->
+      <footer class="mdl-mini-footer">
+          <div class="mdl-mini-footer__left-section">
+              <div class="mdl-logo">Some Footer</div>
+              <ul class="mdl-mini-footer__link-list">
+                  <li><a href="#">Ajuda</a></li>
+                  <li><a href="#">Termos de Privacidade</a></li>
+              </ul>
+          </div>
+      </footer>
 
 	</div>
 
