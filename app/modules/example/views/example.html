@@ -1,7 +1,20 @@
-<div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--12-col mdl-grid">
-    <div ng-repeat="line in example.mock.data.entries">
-        {{line.description}}
+<div class="main-container">
+  <section class="timeline-outer">
+    <div class="mdl-cell mdl-cell--12-col mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col mdl-grid">
+        <ul class="timeline" ng-repeat="line in example.mock.data.entries">
+          <li class="event" data-date="{{line.dateTime | date}}">
+            {{line}}
+            <h3>{{line.title}}</h3>
+            <p>
+                {{line.description}}
+            </p>
+              <p>
+                  {{line.transactionId.substr(0,4)}}
+              </p>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </section>
 </div>
