@@ -45,7 +45,7 @@ var gulp        = require('gulp'),
 
   gulp.task('styles', ['clean-css'], function () {
     return gulp.src([
-      './app/css/**/*.less'
+      './app/**/*.less'
     ])
       .pipe(g.less())
       .pipe(g.concat('main.css'))
@@ -153,7 +153,7 @@ var gulp        = require('gulp'),
     });
     gulp.watch('./app/index.html', ['index']);
     gulp.watch(['./app/**/*.html', '!./app/index.html'], ['templates']);
-    gulp.watch(['./app/css/less/*.less']).on('change', function (evt) {
+    gulp.watch(['./app/less/*.less']).on('change', function (evt) {
       if (evt.type !== 'changed') {
         gulp.start('index');
       } else {
