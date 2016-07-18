@@ -1,20 +1,16 @@
 <div class="main-container">
   <section class="timeline-outer">
-    <div class="mdl-cell mdl-cell--12-col mdl-grid">
       <div class="mdl-cell mdl-cell--12-col mdl-grid">
-        <ul class="timeline" ng-repeat="line in example.mock.data.entries">
-          <li class="event" data-date="{{line.dateTime | date}}">
-            {{line}}
-            <h3>{{line.title}}</h3>
-            <p>
-                {{line.description}}
-            </p>
-              <p>
-                  {{line.transactionId.substr(0,4)}}
-              </p>
-          </li>
+        <ul class="timeline mdl-cell--12-col" ng-repeat="line in example.mock.data.entries">
+        <button class="mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">more_vert</i>
+        </button>
+        <li class="event timeline-content" data-date="{{line.dateTime | date}}">
+          <h3>{{line.title}}</h3>
+          <span class="mdl-cell mdl-cell--4-col">{{line.description}}</span>
+          <h4 class="mdl-cell mdl-cell--8-col">{{line.totalAmount | currency}}</h4>
+        </li>
         </ul>
       </div>
-    </div>
   </section>
 </div>
