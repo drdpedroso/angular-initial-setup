@@ -19,6 +19,7 @@
 
 
       <script src="common/app.js"></script>
+			<script src="modules/example/controllers/example-controller.js"></script>
 
 <body>
 	<!-- Header -->
@@ -30,10 +31,10 @@
 	      <span class="mdl-layout-title">Skeleton, Bro</span>
 	    </div>
 	    <!-- Tabs -->
-	    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+	    <div class="mdl-layout__tab-bar">
 	      <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Timeline</a>
-	      <a href="#fixed-tab-2" class="mdl-layout__tab">Tab 2</a>
-	      <a href="#fixed-tab-3" class="mdl-layout__tab">Tab 3</a>
+	      <a href="#fixed-tab-1" class="mdl-layout__tab">Extrato</a>
+	      <a href="#fixed-tab-3" class="mdl-layout__tab">Operações</a>
 	    </div>
 	  </header>
 	  <div class="mdl-layout__drawer">
@@ -41,16 +42,6 @@
 	  </div>
 		<main class="mdl-layout__content">
 			<ui-view ng-cloak></ui-view>
-
-			<section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
-				<div class="page-content"><!-- Your content goes here --></div>
-			</section>
-			<section class="mdl-layout__tab-panel" id="fixed-tab-2">
-				<div class="page-content"><!-- Your content goes here --></div>
-			</section>
-			<section class="mdl-layout__tab-panel" id="fixed-tab-3">
-				<div class="page-content"><!-- Your content goes here --></div>
-			</section>
 		</main>
 	</div>
 
