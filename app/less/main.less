@@ -1,3 +1,4 @@
+@import 'variables.less';
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
 }
@@ -15,7 +16,7 @@ h1.header {
 /* Timeline */
 
 .timeline {
-  border-left: 8px solid #42A5F5;
+  border-left: 8px solid @color-primary;
   border-bottom-right-radius: 2px;
   border-top-right-radius: 2px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -61,14 +62,12 @@ h1.header {
   color: #212121;
   content: attr(data-date);
   text-align: right;
-  /*  font-weight: 100;*/
-
   font-size: 16px;
   min-width: 120px;
 }
 
 .timeline .event:after {
-  box-shadow: 0 0 0 8px #42A5F5;
+  box-shadow: 0 0 0 8px @color-primary;
   left: -30px;
   background: #212121;
   border-radius: 50%;
@@ -95,4 +94,12 @@ a.portfolio-link {
 /* Overwrite */
 .mdl-button--icon {
   float:right;
+}
+
+.mdl-layout__header {
+  background-color: @color-primary;
+}
+
+.mdl-layout__tab-bar {
+  background-color: @color-primary;
 }
