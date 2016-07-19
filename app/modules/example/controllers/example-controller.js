@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  function exampleController(){
+  function exampleController($state){
       let self = this;
 
       self.mock = {
@@ -108,13 +108,16 @@
 		}
 	  };
 
-	  self.click = function(){
-		  alert('2');
-	  };
+      self.click = (line) => {
+          $state.go('details', {
+              line: line
+          });
+      };
+
 
   }
 
-  exampleController.$inject = [];
+  exampleController.$inject = ['$state'];
 
   angular.module('angular-mdl-skeleton').controller('ExampleController', exampleController);
 }());
