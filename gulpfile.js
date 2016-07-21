@@ -5,13 +5,11 @@ var gulp        = require('gulp'),
     g           = require('gulp-load-plugins')({lazy: false}),
     bowerFiles  = require('main-bower-files'),
     bower       = require('./bower'),
-    es          = require('event-stream'),
     lazypipe    = require('lazypipe'),
     stylish     = require('jshint-stylish'),
     queue       = require('streamqueue'),
     rimraf      = require('rimraf'),
     noop        = g.util.noop,
-    // minifyCSS   = require('gulp-minify-css'),
     mobileFirst = require('gulp-mobile-first'),
     isWatching  = false;
 
@@ -102,7 +100,6 @@ var gulp        = require('gulp'),
     var opt = {read: false};
     return gulp.src('./app/index.html')
       .pipe(g.inject(gulp.src(bowerFiles(), opt), {ignorePath: 'bower_components', starttag: '<!-- inject:vendor:{{ext}} -->'}))
-      .pipe(g.inject(es.merge(appFiles(), cssFiles(opt)), {ignorePath: ['.tmp', 'app']}))
       .pipe(gulp.dest('./app'))
       .pipe(g.embedlr())
       .pipe(gulp.dest('./.tmp/'))
